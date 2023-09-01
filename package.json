@@ -1,0 +1,15 @@
+{
+  "name": "orm-bench",
+  "version": "0.0.0",
+  "scripts": {
+    "bench": "node bench.mjs",
+    "bench:ffi": "node bench.ffi.mjs"
+  },
+  "dependencies": {
+    "@planetscale/database": "^1.7.0",
+    "cli-table": "^0.3.11",
+    "dotenv": "^16.3.1",
+    "mysql2": "^3.6.0",
+    "simple-statistics": "^7.8.3"
+  }
+}

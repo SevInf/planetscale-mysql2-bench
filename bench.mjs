@@ -4,6 +4,7 @@ import Table from 'cli-table'
 import {mean, standardDeviation} from 'simple-statistics'
 import * as mysql from 'mysql2/promise'
 import { connect } from '@planetscale/database'
+import { fetch  } from 'undici'
 
 const connectionString = process.env.DATABASE_URL
 
@@ -12,7 +13,8 @@ const SAMPLES = process.env.N_SAMPLES === undefined
     : Math.max(parseInt(process.env.N_SAMPLES), 1)
 
 const planetscaleClient = connect({
-    url: connectionString
+    url: connectionString,
+    fetch
 })
 async function runPlanetscale() {
 
